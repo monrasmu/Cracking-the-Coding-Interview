@@ -20,9 +20,9 @@ def unique(string):
 
 
 
-	class Test(unittest.TestCase):
-		testT = [('abcd'), ('s4fad'), ('')]
-		testF = [('23ds2'), ('hb 627jh=j')]
+class Test(unittest.TestCase):
+	testT = [('abcd'), ('s4fad'), ('')]
+	testF = [('23ds2'), ('hb 627jh=j')]
 
 	def test_unique(self):
 		# check true
@@ -30,6 +30,7 @@ def unique(string):
 			actual = unique(test_string)
 			# will return message if not true
 			self.assertTrue(actual)
+			print 'hi'
 
 		# check false
 		for test_string in self.testF:
