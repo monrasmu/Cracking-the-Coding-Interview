@@ -19,7 +19,6 @@ def unique(string):
 	return True
 
 
-
 class Test(unittest.TestCase):
 	testT = [('abcd'), ('s4fad'), ('')]
 	testF = [('23ds2'), ('hb 627jh=j')]
