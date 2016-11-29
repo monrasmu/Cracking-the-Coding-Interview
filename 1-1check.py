@@ -30,7 +30,6 @@ class Test(unittest.TestCase):
 			actual = unique(test_string)
 			# will return message if not true
 			self.assertTrue(actual)
-			print 'hi'
 
 		# check false
 		for test_string in self.testF:
