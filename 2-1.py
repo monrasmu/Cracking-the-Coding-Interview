@@ -1,45 +1,41 @@
+# Write code to remove duplicates from an unsorted linked list
+# Couldn't figure out--taken from solutions
+
 from LinkedList import LinkedList
 
-def remove_dups(LinList):
-	if LinList.head is None:
-    	return 0
+def remove_dups(ll):
+    # start at head
+    val = ll.head
+    vals_seen = set([val.value])
 
-    current = LinList.head
-    seen = set([current.value])
-    while current.next:
-        if current.next.value in seen:
-            current.next = current.next.next
+    while val.next:
+        if val.next.value in vals_seen:
+            # if next value has already been seen
+            # skip value and assign to one after
+            # then start over with this value
+            val.next = val.next.next
         else:
-            seen.add(current.next.value)
-            current = current.next
-
-    return LinList
-
-
-def remove_dups_followup(LinList):
-    if LinList.head is None:
-        return
-
-    current = LinList.head
-    while current:
-        runner = current
-        while runner.next:
-            if runner.next.value == current.value:
-                runner.next = runner.next.next
-            else:
-                runner = runner.next
-        current = current.next
-
-    return LinList.head
+            # else add to the seen values
+            vals_seen.add(val.next.value)
+            # start with next value
+            val = val.next
+    return vals_seen
 
 
-LinList = LinkedList()
-LinList.generate(100, 0, 9)
-print(LinList)
-remove_dups(LinList)
-print(LinList)
+ll = LinkedList()
 
-LinList.generate(100, 0, 9)
-print(LinList)
-remove_dups_followup(LinList)
-print(LinList)
+# Test 1--generates random LL
+ll.generate(10, 0, 9)
+print(ll)
+print '\n'
+remove_dups(ll)
+print(ll)
+print '\n'
+print '\n'
+
+# Test 2
+ll.generate(100, 0, 9)
+print(ll)
+print '\n'
+remove_dups(ll)
+print(ll)
