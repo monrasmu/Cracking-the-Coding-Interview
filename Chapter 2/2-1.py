@@ -1,5 +1,4 @@
 # Write code to remove duplicates from an unsorted linked list
-# Couldn't figure out--taken from solutions
 
 from LinkedList import LinkedList
 
