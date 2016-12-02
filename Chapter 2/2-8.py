@@ -7,16 +7,15 @@
 from LinkedList import LinkedList
 
 def detect_loop(ll):
-	# start both at head
 	val = ll.head
 	seen = [val.value]
 	while val is not None:
-		val = val.next
 		seen.append(val.value)
 		if val.value in seen:
 			return val
+		val = val.next
 
-ll = LinkedList([1, 2, 3, 4, 2])
+ll = LinkedList([1, 2, 3, 4, 5, 3])
 print ll
 print(detect_loop(ll))
 
