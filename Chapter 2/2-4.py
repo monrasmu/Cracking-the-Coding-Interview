@@ -2,3 +2,17 @@
 # x come before all nodes greater than or equal to x
 # EX: input: 3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1 [partition = 5]
 #    output: 3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
+
+from LinkedList import LinkedList
+
+def partition(ll, x):
+	
+
+
+
+
+ll = LinkedList()
+ll.generate(10, 0, 99)
+print(ll)
+partition(ll, ll.head.value)
+print(ll)
