@@ -1,4 +1,10 @@
 # Implement a function to check if a linked list is a palindrome
+"""
+See: 
+https://github.com/careercup/CtCI-6th-Edition-Python/blob/master/Chapter%202/6_Palindrome.py
+They have a more "linked list" approach than I do
+"""
+
 
 from LinkedList import LinkedList
 from collections import Counter
@@ -39,16 +45,18 @@ def count_length(ll):
 	return length
 
 
-
 ll_true = LinkedList([1, 2, 3, 4, 5, 4, 3, 2, 1])
 print(is_palindrome(ll_true))
 print 'Should be true', '\n'
+
 ll_true2 = LinkedList([1, 4, 6, 6, 4, 1])
 print(is_palindrome(ll_true2))
 print 'Should be true', '\n'
+
 ll_true3 = LinkedList([1, 4, 6, 2, 6, 4, 1])
 print(is_palindrome(ll_true3))
 print 'Should be true', '\n'
+
 ll_false = LinkedList([1, 2, 3, 4, 5, 6, 7, 8, 9])
 print(is_palindrome(ll_false))
 print 'Should be false', '\n'
