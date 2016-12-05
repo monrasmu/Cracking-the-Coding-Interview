@@ -8,14 +8,15 @@ def zero_matrix(matrix):
 	sizex = len(matrix[0])
 	sizey = len(matrix[1])
 
+	"""
 	for i in range(sizex):
 		if matrix[i] != 0:
 			row.append(matrix[i])
 		else:
 			row.append(0)
-		print row
-
 	"""
+
+	print matrix
 	newMatrix = [[1 for i in range(len(matrix))] for j in range(len(matrix))]
 	for i in range(len(matrix[0])):
 		for j in range(len(matrix[1])):
@@ -24,7 +25,9 @@ def zero_matrix(matrix):
 			elif matrix[i][j] == 0:
 				newMatrix = rowZero(i, matrix)
 				newMatrix = colZero(j, matrix)
-			print newMatrix
+				print matrix
+	print matrix
+	print newMatrix
 	return newMatrix
 
 def rowZero(row, matrix1):
@@ -36,7 +39,7 @@ def colZero(col, matrix2):
 	for i in range(len(matrix2[1])):
 		matrix2[i][col] = 0
 	return matrix2
-	"""
+
 
 
 class Test(unittest.TestCase):

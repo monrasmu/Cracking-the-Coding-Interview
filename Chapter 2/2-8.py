@@ -6,16 +6,20 @@
 
 from LinkedList import LinkedList
 
-def detect_loop(ll):
-	val = ll.head
-	seen = [val.value]
-	while val is not None:
-		seen.append(val.value)
-		if val.value in seen:
-			return val
-		val = val.next
 
-ll = LinkedList([1, 2, 3, 4, 5, 3])
-print ll
-print(detect_loop(ll))
+def loop_detection(ll):
+	# Only works for even length LLs
+    fast = slow = ll.head
 
+    while fast and fast.next:
+        fast = fast.next.next
+        slow = slow.next
+        if fast == slow:
+        	break
+
+    slow = ll.head
+    while fast is not slow:
+        fast = fast.next
+        slow = slow.next
+
+    return fast
