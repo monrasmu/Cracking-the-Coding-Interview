@@ -1,5 +1,13 @@
 # Write an algorithm such that if an element in an MxN matrix is 0
 # then it's entire row and column are set to 0
+"""
+Their way is definitely prettier than mine
+https://github.com/careercup/CtCI-6th-Edition-Python/blob/master/Chapter%201/8_Zero%20Matrix/ZeroMatrix.py
+And doesn't create a whole new matrix
+
+ISSUE WITH PBR vs PBV
+python allows for PBR so matrix is getting changed when I don't want it to
+"""
 
 import unittest
 
@@ -8,15 +16,6 @@ def zero_matrix(matrix):
 	sizex = len(matrix[0])
 	sizey = len(matrix[1])
 
-	"""
-	for i in range(sizex):
-		if matrix[i] != 0:
-			row.append(matrix[i])
-		else:
-			row.append(0)
-	"""
-
-	print matrix
 	newMatrix = [[1 for i in range(len(matrix))] for j in range(len(matrix))]
 	for i in range(len(matrix[0])):
 		for j in range(len(matrix[1])):
@@ -25,9 +24,6 @@ def zero_matrix(matrix):
 			elif matrix[i][j] == 0:
 				newMatrix = rowZero(i, matrix)
 				newMatrix = colZero(j, matrix)
-				print matrix
-	print matrix
-	print newMatrix
 	return newMatrix
 
 def rowZero(row, matrix1):
