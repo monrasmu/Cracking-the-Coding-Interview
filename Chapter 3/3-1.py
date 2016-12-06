@@ -1,3 +1,5 @@
+# Use a single array to implement three stacks
+
 from Multistack import MultiStack
 import unittest
 
